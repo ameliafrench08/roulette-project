@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj7d8f5dsat5o"]
+
+[ext_resource type="Script" path="res://Sprite2D.gd" id="1_h0hr4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0lris"]
+load_path = "res://.godot/imported/roulette-table.jpg-e9cbad6f94c895734f90502c2846fcb9.ctex"
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(600, 325)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_0lris")
+script = ExtResource("1_h0hr4")
