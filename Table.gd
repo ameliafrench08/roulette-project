@@ -1,6 +1,6 @@
 extends Sprite2D
 var speed = 400
-var angular_speed = 20
+var angular_speed = 3
 var moving = true
 
 func _init():
@@ -19,13 +19,15 @@ func _process(delta):
 	
 	if round(angular_speed) != 0:
 		rotation += angular_speed * delta
-		angular_speed -= 0.01
-	if angular_speed == 0:
-		# Find the angle of the sprite so that you can calculate what number pops up
-		return
+		angular_speed -= 0.00001
+	var angle_in_degrees = round(rad_to_deg(get_angle_to(Vector2(600, 0))))
+	
+	if angle_in_degrees < 0:
+		angle_in_degrees+= 360
+	
+	if round(angular_speed) == 0:
+		if round(angular_speed) >= 268 && round(angular_speed) <= 272:
+			print("ITS A 0")
+	print(angle_in_degrees)
 		
  
-
-
-
-	
