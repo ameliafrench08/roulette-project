@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfbjblthxjijk"]
+[gd_scene load_steps=8 format=3 uid="uid://cfbjblthxjijk"]
 
 [ext_resource type="Texture2D" uid="uid://xtf8tikpjtlg" path="res://Roulette-Table.png" id="1_gnin7"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_wfsmt"]
 [ext_resource type="Script" path="res://roulette-table.gd" id="2_qngbs"]
 [ext_resource type="Texture2D" uid="uid://bm3mc4i5u3eo3" path="res://black arrow.png" id="3_x3nsm"]
 [ext_resource type="Script" path="res://CheckButton.gd" id="6_lby2y"]
+[ext_resource type="Script" path="res://Money.gd" id="7_2xrry"]
 [ext_resource type="Script" path="res://LineEdit.gd" id="7_4pvg5"]
 
 [node name="node" type="Node2D"]
@@ -46,3 +47,12 @@ placeholder_text = "-Enter Bet-"
 max_length = 2
 virtual_keyboard_type = 2
 script = ExtResource("7_4pvg5")
+
+[node name="Money" type="LineEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 87.0
+offset_top = 566.0
+offset_right = 227.0
+offset_bottom = 597.0
+placeholder_text = "-Enter Cash Bet-"
+script = ExtResource("7_2xrry")
