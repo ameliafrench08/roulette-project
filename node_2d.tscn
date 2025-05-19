@@ -1,20 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfhdxyemmygu0"]
+[gd_scene load_steps=7 format=3 uid="uid://cfbjblthxjijk"]
 
-[ext_resource type="Texture2D" uid="uid://cg8xffm3bfwu5" path="res://Roulette-Table.png" id="1_0n71p"]
-[ext_resource type="Texture2D" uid="uid://4thg1csgk3yh" path="res://black arrow.png" id="1_gng4b"]
-[ext_resource type="Script" path="res://roulette table.gd" id="2_f5rpe"]
+[ext_resource type="Texture2D" uid="uid://xtf8tikpjtlg" path="res://Roulette-Table.png" id="1_gnin7"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_wfsmt"]
+[ext_resource type="Script" path="res://roulette-table.gd" id="2_qngbs"]
+[ext_resource type="Texture2D" uid="uid://bm3mc4i5u3eo3" path="res://black arrow.png" id="3_x3nsm"]
+[ext_resource type="Script" path="res://CheckButton.gd" id="6_lby2y"]
+[ext_resource type="Script" path="res://LineEdit.gd" id="7_4pvg5"]
 
-[node name="Node2D" type="Node2D"]
+[node name="node" type="Node2D"]
+script = ExtResource("1_wfsmt")
+
+[node name="roulette_table" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(600, 325)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.665278, 0.665278)
+texture = ExtResource("1_gnin7")
+script = ExtResource("2_qngbs")
 
 [node name="arrow" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(0, -460)
+position = Vector2(600, 4.22552)
 rotation = 1.5708
-scale = Vector2(0.21, 0.4)
-texture = ExtResource("1_gng4b")
+scale = Vector2(0.179212, 0.285185)
+texture = ExtResource("3_x3nsm")
 
-[node name="roulette table" type="Sprite2D" parent="."]
-texture = ExtResource("1_0n71p")
-script = ExtResource("2_f5rpe")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="CheckButton" type="CheckButton" parent="."]
+unique_name_in_owner = true
+offset_left = 942.0
+offset_top = 56.0
+offset_right = 1108.0
+offset_bottom = 87.0
+text = "-start spinning-"
+flat = true
+script = ExtResource("6_lby2y")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 92.0
+offset_top = 77.0
+offset_right = 197.0
+offset_bottom = 108.0
+placeholder_text = "-Enter Bet-"
+max_length = 2
+virtual_keyboard_type = 2
+script = ExtResource("7_4pvg5")
