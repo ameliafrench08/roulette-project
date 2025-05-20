@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfbjblthxjijk"]
+[gd_scene load_steps=16 format=3 uid="uid://cfbjblthxjijk"]
 
 [ext_resource type="Texture2D" uid="uid://xtf8tikpjtlg" path="res://Roulette-Table.png" id="1_gnin7"]
 [ext_resource type="Script" path="res://node_2d.gd" id="1_wfsmt"]
@@ -7,6 +7,17 @@
 [ext_resource type="Script" path="res://CheckButton.gd" id="6_lby2y"]
 [ext_resource type="Script" path="res://Money.gd" id="7_2xrry"]
 [ext_resource type="Script" path="res://LineEdit.gd" id="7_4pvg5"]
+[ext_resource type="Texture2D" uid="uid://kepe2gp33uo2" path="res://Screenshot 2025-05-20 100939.png" id="8_7uoo2"]
+[ext_resource type="Texture2D" uid="uid://70iotl2emdce" path="res://black poker chip.png" id="8_v8nxv"]
+[ext_resource type="Texture2D" uid="uid://c38kd2whmy0c2" path="res://Green Chip.png" id="9_rnkbf"]
+[ext_resource type="Script" path="res://BlackChipArea.gd" id="10_ndi65"]
+[ext_resource type="Script" path="res://BlackChipCollision.gd" id="11_l3qoe"]
+[ext_resource type="Texture2D" uid="uid://c6m1437l8kcox" path="res://red chip.png" id="12_hfini"]
+
+[sub_resource type="Theme" id="Theme_mec5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcaii"]
+radius = 50.0899
 
 [node name="node" type="Node2D"]
 script = ExtResource("1_wfsmt")
@@ -34,11 +45,13 @@ offset_left = 942.0
 offset_top = 56.0
 offset_right = 1108.0
 offset_bottom = 87.0
+theme = SubResource("Theme_mec5m")
 text = "-start spinning-"
 flat = true
 script = ExtResource("6_lby2y")
 
 [node name="LineEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
 offset_left = 92.0
 offset_top = 77.0
 offset_right = 197.0
@@ -50,9 +63,55 @@ script = ExtResource("7_4pvg5")
 
 [node name="Money" type="LineEdit" parent="."]
 unique_name_in_owner = true
-offset_left = 87.0
-offset_top = 566.0
-offset_right = 227.0
-offset_bottom = 597.0
-placeholder_text = "-Enter Cash Bet-"
+offset_left = 34.0
+offset_top = 572.0
+offset_right = 279.0
+offset_bottom = 603.0
+placeholder_text = "-Enter Cash Bet Followed by *-"
 script = ExtResource("7_2xrry")
+
+[node name="GreenChip" type="Sprite2D" parent="."]
+position = Vector2(967.556, 587)
+scale = Vector2(0.231111, 0.231111)
+texture = ExtResource("9_rnkbf")
+
+[node name="RedChipArea" type="Area2D" parent="."]
+
+[node name="RedChipCollision" type="CollisionShape2D" parent="RedChipArea"]
+position = Vector2(1094.56, 590)
+shape = SubResource("CircleShape2D_qcaii")
+debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
+
+[node name="GreenChipArea" type="Area2D" parent="."]
+
+[node name="GreenChipCollision" type="CollisionShape2D" parent="GreenChipArea"]
+position = Vector2(967, 587)
+shape = SubResource("CircleShape2D_qcaii")
+debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
+
+[node name="BlackChipArea" type="Area2D" parent="."]
+script = ExtResource("10_ndi65")
+
+[node name="BlackChip" type="Sprite2D" parent="BlackChipArea"]
+z_index = 1
+position = Vector2(855, 589)
+scale = Vector2(0.546667, 0.555556)
+texture = ExtResource("8_v8nxv")
+
+[node name="BlackChipCollision" type="CollisionShape2D" parent="BlackChipArea"]
+position = Vector2(856, 590)
+shape = SubResource("CircleShape2D_qcaii")
+debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
+script = ExtResource("11_l3qoe")
+
+[node name="RedChip" type="Sprite2D" parent="."]
+position = Vector2(1094, 590)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("12_hfini")
+
+[node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
+visibility_layer = 32
+position = Vector2(589, 339)
+scale = Vector2(8.47222, 5.89844)
+texture = ExtResource("8_7uoo2")
