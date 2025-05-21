@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djysfkx2f4m71"
-path="res://.godot/imported/black arrow.png-102b3de754df0b50d6a980cac92db8fb.ctex"
+uid="uid://yduto6sx4dnd"
+path="res://.godot/imported/GreenBackground.png-a03571e9508727253ff1221f57f7e6e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://black arrow.png"
-dest_files=["res://.godot/imported/black arrow.png-102b3de754df0b50d6a980cac92db8fb.ctex"]
+source_file="res://GreenBackground.png"
+dest_files=["res://.godot/imported/GreenBackground.png-a03571e9508727253ff1221f57f7e6e3.ctex"]
 
 [params]
 

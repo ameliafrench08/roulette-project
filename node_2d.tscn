@@ -1,117 +1,141 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfbjblthxjijk"]
+[gd_scene load_steps=20 format=3 uid="uid://c8nc84tigl0tl"]
 
-[ext_resource type="Texture2D" uid="uid://xtf8tikpjtlg" path="res://Roulette-Table.png" id="1_gnin7"]
-[ext_resource type="Script" path="res://node_2d.gd" id="1_wfsmt"]
-[ext_resource type="Script" path="res://roulette-table.gd" id="2_qngbs"]
-[ext_resource type="Texture2D" uid="uid://bm3mc4i5u3eo3" path="res://black arrow.png" id="3_x3nsm"]
-[ext_resource type="Script" path="res://CheckButton.gd" id="6_lby2y"]
-[ext_resource type="Script" path="res://Money.gd" id="7_2xrry"]
-[ext_resource type="Script" path="res://LineEdit.gd" id="7_4pvg5"]
-[ext_resource type="Texture2D" uid="uid://kepe2gp33uo2" path="res://Screenshot 2025-05-20 100939.png" id="8_7uoo2"]
-[ext_resource type="Texture2D" uid="uid://70iotl2emdce" path="res://black poker chip.png" id="8_v8nxv"]
-[ext_resource type="Texture2D" uid="uid://c38kd2whmy0c2" path="res://Green Chip.png" id="9_rnkbf"]
-[ext_resource type="Script" path="res://BlackChipArea.gd" id="10_ndi65"]
-[ext_resource type="Script" path="res://BlackChipCollision.gd" id="11_l3qoe"]
-[ext_resource type="Texture2D" uid="uid://c6m1437l8kcox" path="res://red chip.png" id="12_hfini"]
+[ext_resource type="Texture2D" uid="uid://b072f7r6tl27a" path="res://Roulette-Table.png" id="1_i33ox"]
+[ext_resource type="Script" path="res://roulette_table.gd" id="2_cxsjg"]
+[ext_resource type="Script" path="res://TextEdit.gd" id="3_stp4q"]
+[ext_resource type="Texture2D" uid="uid://djysfkx2f4m71" path="res://black arrow.png" id="4_dljdr"]
+[ext_resource type="Script" path="res://CheckButton.gd" id="5_4lb5g"]
+[ext_resource type="Script" path="res://Area2D.gd" id="6_afsvd"]
+[ext_resource type="Texture2D" uid="uid://bha1jhqak446o" path="res://red chip.png" id="6_cg3y3"]
+[ext_resource type="Texture2D" uid="uid://bey664r2h12et" path="res://Green Chip.png" id="7_yvewg"]
+[ext_resource type="Texture2D" uid="uid://btdr6i4xptd87" path="res://black chip.png" id="8_j0wmg"]
+[ext_resource type="Script" path="res://Area2D2.gd" id="8_uncqq"]
+[ext_resource type="Script" path="res://Label.gd" id="10_245e8"]
+[ext_resource type="Script" path="res://Area2D3.gd" id="10_r5jxi"]
+[ext_resource type="Texture2D" uid="uid://yduto6sx4dnd" path="res://GreenBackground.png" id="13_5n1h0"]
+[ext_resource type="Script" path="res://NumberLanded.gd" id="14_ork0m"]
+[ext_resource type="Script" path="res://Money.gd" id="15_3jx6l"]
+[ext_resource type="Script" path="res://Outcome.gd" id="16_2qonf"]
 
-[sub_resource type="Theme" id="Theme_mec5m"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6xfi"]
+radius = 43.0116
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qcaii"]
-radius = 50.0899
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyf7g"]
+radius = 47.0106
 
-[node name="node" type="Node2D"]
-script = ExtResource("1_wfsmt")
+[sub_resource type="CircleShape2D" id="CircleShape2D_putdt"]
+radius = 49.0408
+
+[node name="Node2D" type="Node2D"]
 
 [node name="roulette_table" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(600, 325)
-scale = Vector2(0.665278, 0.665278)
-texture = ExtResource("1_gnin7")
-script = ExtResource("2_qngbs")
+position = Vector2(600, 330)
+scale = Vector2(0.625926, 0.625926)
+texture = ExtResource("1_i33ox")
+script = ExtResource("2_cxsjg")
 
-[node name="arrow" type="Sprite2D" parent="."]
-position = Vector2(600, 4.22552)
+[node name="TextEdit" type="TextEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 81.0
+offset_top = 57.0
+offset_right = 191.0
+offset_bottom = 94.0
+placeholder_text = "-ENTER BET-"
+script = ExtResource("3_stp4q")
+
+[node name="BlackArrow" type="Sprite2D" parent="."]
+position = Vector2(600, 11.3137)
 rotation = 1.5708
-scale = Vector2(0.179212, 0.285185)
-texture = ExtResource("3_x3nsm")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+scale = Vector2(0.204178, 0.20463)
+texture = ExtResource("4_dljdr")
 
 [node name="CheckButton" type="CheckButton" parent="."]
 unique_name_in_owner = true
-offset_left = 942.0
-offset_top = 56.0
-offset_right = 1108.0
-offset_bottom = 87.0
-theme = SubResource("Theme_mec5m")
-text = "-start spinning-"
-flat = true
-script = ExtResource("6_lby2y")
+offset_left = 944.0
+offset_top = 55.0
+offset_right = 1112.0
+offset_bottom = 86.0
+text = "-Start Spinning-"
+script = ExtResource("5_4lb5g")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("6_afsvd")
+
+[node name="RedChip" type="Sprite2D" parent="Area2D"]
+position = Vector2(873, 586)
+scale = Vector2(0.193333, 0.193333)
+texture = ExtResource("6_cg3y3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(873, 587)
+shape = SubResource("CircleShape2D_v6xfi")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("8_uncqq")
+
+[node name="GreenChip" type="Sprite2D" parent="Area2D2"]
+position = Vector2(985.139, 588.5)
+scale = Vector2(0.211111, 0.211111)
+texture = ExtResource("7_yvewg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(986, 588)
+shape = SubResource("CircleShape2D_uyf7g")
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("10_r5jxi")
+
+[node name="BlackChip" type="Sprite2D" parent="Area2D3"]
+position = Vector2(1097, 585)
+scale = Vector2(0.507778, 0.507778)
+texture = ExtResource("8_j0wmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1097, 585)
+shape = SubResource("CircleShape2D_putdt")
+
+[node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 92.0
-offset_top = 77.0
-offset_right = 197.0
-offset_bottom = 108.0
-placeholder_text = "-Enter Bet-"
-max_length = 2
-virtual_keyboard_type = 2
-script = ExtResource("7_4pvg5")
+offset_left = 965.0
+offset_top = 444.0
+offset_right = 1125.0
+offset_bottom = 508.0
+script = ExtResource("10_245e8")
 
-[node name="Money" type="LineEdit" parent="."]
-unique_name_in_owner = true
-offset_left = 34.0
-offset_top = 572.0
-offset_right = 279.0
-offset_bottom = 603.0
-placeholder_text = "-Enter Cash Bet Followed by *-"
-script = ExtResource("7_2xrry")
+[node name="ChipValues" type="Label" parent="."]
+offset_left = 844.0
+offset_top = 574.0
+offset_right = 1138.0
+offset_bottom = 597.0
+text = "      1                         5                       15"
 
-[node name="GreenChip" type="Sprite2D" parent="."]
-position = Vector2(967.556, 587)
-scale = Vector2(0.231111, 0.231111)
-texture = ExtResource("9_rnkbf")
-
-[node name="RedChipArea" type="Area2D" parent="."]
-
-[node name="RedChipCollision" type="CollisionShape2D" parent="RedChipArea"]
-position = Vector2(1094.56, 590)
-shape = SubResource("CircleShape2D_qcaii")
-debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
-
-[node name="GreenChipArea" type="Area2D" parent="."]
-
-[node name="GreenChipCollision" type="CollisionShape2D" parent="GreenChipArea"]
-position = Vector2(967, 587)
-shape = SubResource("CircleShape2D_qcaii")
-debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
-
-[node name="BlackChipArea" type="Area2D" parent="."]
-script = ExtResource("10_ndi65")
-
-[node name="BlackChip" type="Sprite2D" parent="BlackChipArea"]
-z_index = 1
-position = Vector2(855, 589)
-scale = Vector2(0.546667, 0.555556)
-texture = ExtResource("8_v8nxv")
-
-[node name="BlackChipCollision" type="CollisionShape2D" parent="BlackChipArea"]
-position = Vector2(856, 590)
-shape = SubResource("CircleShape2D_qcaii")
-debug_color = Color(0.853896, 0.338261, 0.394372, 0.42)
-script = ExtResource("11_l3qoe")
-
-[node name="RedChip" type="Sprite2D" parent="."]
-position = Vector2(1094, 590)
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("12_hfini")
-
-[node name="Background" type="Sprite2D" parent="."]
+[node name="GreenBackground" type="Sprite2D" parent="."]
 show_behind_parent = true
-visibility_layer = 32
-position = Vector2(589, 339)
-scale = Vector2(8.47222, 5.89844)
-texture = ExtResource("8_7uoo2")
+position = Vector2(-685, 361)
+scale = Vector2(8.90972, 5.32031)
+texture = ExtResource("13_5n1h0")
+
+[node name="NumberLanded" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 403.0
+offset_right = 233.0
+offset_bottom = 493.0
+horizontal_alignment = 1
+script = ExtResource("14_ork0m")
+
+[node name="Money" type="Label" parent="."]
+offset_left = 970.0
+offset_top = 337.0
+offset_right = 1082.0
+offset_bottom = 372.0
+script = ExtResource("15_3jx6l")
+
+[node name="Outcome" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 52.0
+offset_top = 537.0
+offset_right = 225.0
+offset_bottom = 627.0
+horizontal_alignment = 1
+script = ExtResource("16_2qonf")
