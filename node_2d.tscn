@@ -112,7 +112,7 @@ text = "      1                         5                       15"
 
 [node name="GreenBackground" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(-685, 361)
+position = Vector2(578, 324)
 scale = Vector2(8.90972, 5.32031)
 texture = ExtResource("13_5n1h0")
 

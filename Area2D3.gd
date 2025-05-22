@@ -8,6 +8,16 @@ func _ready():
 
 func _input(event):
 	var clicked = false
+	
+	if event is InputEventMouseMotion:
+		var mousePosition = event.position
+		var x = mousePosition.x
+		var y = mousePosition.y
+		if (x >= 1056 && x <= 1137 && y >= 544 && y <= 622) || (x >= 834 && x <= 909 && y >= 545 && y <= 621) || (x >= 944 && x <= 1024 && y >= 547 && y <= 627):
+			Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+		else:
+			Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+		
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		var coord_pair = event.position

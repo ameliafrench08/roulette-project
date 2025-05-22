@@ -4,16 +4,22 @@ var angular_speed = 0
 var moving = false
 var angle = 0
 var spun = false
+var change = 0.003
+var startingAngle = 0
 
 
 
 func _init():
 	print("Hello, world!")
-
+	var x = randf_range(0, TAU)
+	rotate(x)
+	startingAngle = rad_to_deg(x)
+	
 
 
 func _process(delta):
 	var check_button = %CheckButton
+	
 	if moving == false:
 		if check_button.return_check() == true:
 			angular_speed = 10
@@ -22,7 +28,11 @@ func _process(delta):
 	if moving == true:
 		if round(angular_speed) != 0:
 			rotation += angular_speed * delta
-			angular_speed -= 0.003
+			angular_speed -= change
+			
+			if round(angular_speed) == 1:
+				change = 0.001
+			
 		var angle_in_degrees = round(rad_to_deg(get_angle_to(Vector2(600, 0))))
 		
 		if angle_in_degrees < 0:
@@ -139,12 +149,14 @@ func _process(delta):
 			if angle_in_degrees >= 350.244:
 				angle = 17
 			spun = true
+			moving = false
+			change = 0.003 
 		
 		
-		#print(angle_in_degrees)
-		#print("ANGLE: ")
-		#print(angle)
-		#print("---------------------")
+		print(angle_in_degrees)
+		print("ANGLE: ")
+		print(angle)
+		print("---------------------")
 
 
 func return_angle():
