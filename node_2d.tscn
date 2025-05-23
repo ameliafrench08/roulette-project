@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8nc84tigl0tl"]
+[gd_scene load_steps=21 format=3 uid="uid://c8nc84tigl0tl"]
 
 [ext_resource type="Texture2D" uid="uid://b072f7r6tl27a" path="res://Roulette-Table.png" id="1_i33ox"]
 [ext_resource type="Script" path="res://roulette_table.gd" id="2_cxsjg"]
 [ext_resource type="Script" path="res://TextEdit.gd" id="3_stp4q"]
 [ext_resource type="Texture2D" uid="uid://djysfkx2f4m71" path="res://black arrow.png" id="4_dljdr"]
 [ext_resource type="Script" path="res://CheckButton.gd" id="5_4lb5g"]
+[ext_resource type="Script" path="res://BlackArrow.gd" id="5_vcdd6"]
 [ext_resource type="Script" path="res://Area2D.gd" id="6_afsvd"]
 [ext_resource type="Texture2D" uid="uid://bha1jhqak446o" path="res://red chip.png" id="6_cg3y3"]
 [ext_resource type="Texture2D" uid="uid://bey664r2h12et" path="res://Green Chip.png" id="7_yvewg"]
@@ -49,6 +50,7 @@ position = Vector2(600, 11.3137)
 rotation = 1.5708
 scale = Vector2(0.204178, 0.20463)
 texture = ExtResource("4_dljdr")
+script = ExtResource("5_vcdd6")
 
 [node name="CheckButton" type="CheckButton" parent="."]
 unique_name_in_owner = true

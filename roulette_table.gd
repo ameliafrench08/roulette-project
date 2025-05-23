@@ -19,6 +19,8 @@ func _init():
 
 func _process(delta):
 	var check_button = %CheckButton
+	if spun == true && round(angular_speed) == 0:
+		spun = false
 	
 	if moving == false:
 		if check_button.return_check() == true:
@@ -32,6 +34,7 @@ func _process(delta):
 			
 			if round(angular_speed) == 1:
 				change = 0.001
+				spun = true
 			
 		var angle_in_degrees = round(rad_to_deg(get_angle_to(Vector2(600, 0))))
 		
@@ -148,7 +151,7 @@ func _process(delta):
 			
 			if angle_in_degrees >= 350.244:
 				angle = 17
-			spun = true
+			
 			moving = false
 			change = 0.003 
 		
@@ -158,6 +161,14 @@ func _process(delta):
 		print(angle)
 		print("---------------------")
 
+func reset():
+	speed = 400
+	angular_speed = 0
+	moving = false
+	angle = 0
+	spun = false
+	change = 0.003
+	moving = false
 
 func return_angle():
 	return angle

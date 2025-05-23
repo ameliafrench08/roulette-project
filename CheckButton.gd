@@ -1,5 +1,6 @@
 extends CheckButton
 var madeStopped = false
+var button_on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,7 @@ func _process(delta):
 	var roulette_table = %roulette_table
 	if madeStopped == false:
 		if roulette_table.return_spun() == true:
+			button_on = false
 			set_pressed(false)
 			madeStopped = true
 	
