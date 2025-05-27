@@ -12,7 +12,7 @@ func _input(event):
 		var mousePosition = event.position
 		var x = mousePosition.x
 		var y = mousePosition.y
-		if (x >= 1056 && x <= 1137 && y >= 544 && y <= 622) || (x >= 834 && x <= 909 && y >= 545 && y <= 621) || (x >= 944 && x <= 1024 && y >= 547 && y <= 627):
+		if (x >= 915 && x <= 1011 && y >= 544 && y <= 635) || (x >= 796 && x <= 879 && y >= 546 && y <= 631) || (x >= 1033 && x <= 1129 && y >= 543 && y <= 638):
 			Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 		else:
 			Input.set_default_cursor_shape(Input.CURSOR_ARROW)
@@ -22,7 +22,7 @@ func _input(event):
 		var coord_pair = event.position
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
-		if x_coord >= 834 && x_coord <= 909 && y_coord >= 545 && y_coord <= 621:
+		if x_coord >= 796 && x_coord <= 879 && y_coord >= 546 && y_coord <= 631:
 			clicked = true
 			label.changeBet(0.5)
 			print(label.returnBet())
