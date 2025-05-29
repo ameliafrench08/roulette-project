@@ -11,6 +11,7 @@ func _input(event):
 	
 	if event is InputEventMouseMotion:
 		var mousePosition = event.position
+		
 		var x = mousePosition.x
 		var y = mousePosition.y
 		if (x>=1059 && x<=1095 && y>=490 && y<=528)||(x >= 944 && x <= 982 && y>=490 && y <=528) || (x >= 814 && x <= 856 && y >= 491 && y <= 530)|| (x >= 915 && x <= 1011 && y >= 544 && y <= 635) || (x >= 796 && x <= 879 && y >= 546 && y <= 631) || (x >= 1033 && x <= 1129 && y >= 543 && y <= 638):
@@ -21,12 +22,12 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		var coord_pair = event.position
+		print(event.position)
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
-		if x_coord >= 1033 && x_coord <= 1129 && y_coord >= 543 && y_coord <= 638:
+		if x_coord >= 944 && x_coord <= 982 && y_coord >= 490 && y_coord <= 528:
 			clicked = true
-			label.changeBet(7.5)
-			print(label.returnBet())
+			label.changeBet(-2.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

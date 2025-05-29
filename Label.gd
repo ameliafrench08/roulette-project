@@ -15,5 +15,7 @@ func returnBet():
 	return bet
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var roulette = %roulette_table
 	if (round(bet) == bet):
 		text = "Bet: " + str(bet)
+	

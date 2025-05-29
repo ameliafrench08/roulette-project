@@ -6,43 +6,42 @@ var angle = 0
 var spun = false
 var change = 0.003
 var startingAngle = 0
+var changed_speed = false
+var startingSpeed = 0
 
 
 
 func _init():
 	print("Hello, world!")
-	var x = randf_range(0, TAU)
-	rotate(x)
-	startingAngle = rad_to_deg(x)
+	
+	startingSpeed = randf_range(3, 15)
 	
 
 
 func _process(delta):
 	var check_button = %CheckButton
-	if spun == true && round(angular_speed) == 0:
-		spun = false
 	
-	if moving == false:
-		if check_button.return_check() == true:
-			angular_speed = 10
-			moving = true
-			
-	if moving == true:
+	if check_button.return_check() == true:
+		
+		
+		moving = true
+		if changed_speed == false:
+			angular_speed = startingSpeed
+			changed_speed = true
 		if round(angular_speed) != 0:
 			rotation += angular_speed * delta
 			angular_speed -= change
 			
-			if round(angular_speed) == 1:
-				change = 0.001
-				spun = true
+			#if round(angular_speed) == 1:
+				#change = 0.001
 			
 		var angle_in_degrees = round(rad_to_deg(get_angle_to(Vector2(600, 0))))
 		
 		if angle_in_degrees < 0:
-			angle_in_degrees+= 360
+			angle_in_degrees += 360
 		
 		if round(angular_speed) == 0:
-			
+			moving = false
 			if angle_in_degrees >= 0 && angle_in_degrees <= 9.729:
 				angle = 34
 			
@@ -66,6 +65,7 @@ func _process(delta):
 			
 			if angle_in_degrees >= 68.103 && angle_in_degrees <= 77.832:
 				angle = 8
+			
 			if angle_in_degrees >= 77.832 && angle_in_degrees <= 87.561:
 				angle = 23
 				
@@ -80,6 +80,7 @@ func _process(delta):
 				
 			if angle_in_degrees >= 116.748 && angle_in_degrees <= 126.477:
 				angle = 33
+			
 			if angle_in_degrees >= 126.477 && angle_in_degrees <= 136.206:
 				angle = 1
 				
@@ -151,27 +152,34 @@ func _process(delta):
 			
 			if angle_in_degrees >= 350.244:
 				angle = 17
-			
+			spun = true
 			moving = false
+			startingSpeed = randf_range(3, 15)
 			change = 0.003 
 		
 		
-		print(angle_in_degrees)
-		print("ANGLE: ")
-		print(angle)
-		print("---------------------")
-
+		#print(angle_in_degrees)
+		#print("ANGLE: ")
+		#print(angle)
+		#print("---------------------")
+		
+	
+	if check_button.return_check() == false:
+		reset()
 func reset():
 	speed = 400
 	angular_speed = 0
-	moving = false
 	angle = 0
 	spun = false
 	change = 0.003
 	moving = false
+	changed_speed = false
 
 func return_angle():
 	return angle
 
 func return_spun():
 	return spun
+	
+func return_moving():
+	return moving

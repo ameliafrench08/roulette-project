@@ -12,7 +12,7 @@ func _input(event):
 		var mousePosition = event.position
 		var x = mousePosition.x
 		var y = mousePosition.y
-		if (x >= 915 && x <= 1011 && y >= 544 && y <= 635) || (x >= 796 && x <= 879 && y >= 546 && y <= 631) || (x >= 1033 && x <= 1129 && y >= 543 && y <= 638):
+		if (x>=1059 && x<=1095 && y>=490 && y<=528)||(x >= 944 && x <= 982 && y>=490 && y <=528) || (x >= 814 && x <= 856 && y >= 491 && y <= 530)|| (x >= 915 && x <= 1011 && y >= 544 && y <= 635) || (x >= 796 && x <= 879 && y >= 546 && y <= 631) || (x >= 1033 && x <= 1129 && y >= 543 && y <= 638):
 			Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 		else:
 			Input.set_default_cursor_shape(Input.CURSOR_ARROW)

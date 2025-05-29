@@ -14,13 +14,11 @@ func _on_Area2D_mouse_exited() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var roulette_table = %roulette_table
-	if madeStopped == false:
-		if roulette_table.return_spun() == true:
-			button_on = false
-			set_pressed(false)
-			madeStopped = true
-	
-		
+	if roulette_table.return_spun() == true:
+		button_on = false
+		set_pressed(false)
+		button_pressed = false
+
 
 func return_check():
 	if button_pressed:

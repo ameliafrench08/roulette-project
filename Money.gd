@@ -11,12 +11,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var label = %Label
-	var textEdit = %TextEdit
-	var equal = textEdit.return_equal()
-	
+	var textEdit = %LineEdit
+	var equal = textEdit.returnEqual()
+	var check = %CheckButton
 	var roulette_table = %roulette_table
 	
-	
+	if check.return_check() == true:
+		moneyChanged = false
 	if roulette_table.return_spun() == true:
 		if moneyChanged == false:
 			moneyChanged = true
