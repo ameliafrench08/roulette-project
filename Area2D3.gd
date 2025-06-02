@@ -26,7 +26,7 @@ func _input(event):
 		if x_coord >= 1033 && x_coord <= 1129 && y_coord >= 543 && y_coord <= 638:
 			clicked = true
 			label.changeBet(7.5)
-			print(label.returnBet())
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

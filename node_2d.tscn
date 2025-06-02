@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bp6gpta7y6kvt"]
+[gd_scene load_steps=25 format=3 uid="uid://dcbahi0o5hpo0"]
 
 [ext_resource type="Script" path="res://Area2D.gd" id="1_xmx70"]
 [ext_resource type="Texture2D" uid="uid://b4207v8iegman" path="res://red chip.png" id="2_17sg6"]

@@ -22,7 +22,7 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		var coord_pair = event.position
-		print(event.position)
+
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
 		if x_coord >= 814 && x_coord <= 856 && y_coord >= 491 && y_coord <= 530:

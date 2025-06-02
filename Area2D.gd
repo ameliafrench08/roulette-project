@@ -25,7 +25,7 @@ func _input(event):
 		if x_coord >= 796 && x_coord <= 879 && y_coord >= 546 && y_coord <= 631:
 			clicked = true
 			label.changeBet(0.5)
-			print(label.returnBet())
+
 
 	
 

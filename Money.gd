@@ -26,4 +26,4 @@ func _process(delta):
 			else:
 				money -= label.returnBet()
 			
-			text = "Money: " + str(money)
+	text = "Money: " + str(money)

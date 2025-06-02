@@ -22,13 +22,13 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		var coord_pair = event.position
-		print(event.position)
+
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
 		if x_coord >= 920 && x_coord <= 1011 && y_coord >= 544 && y_coord <= 635:
 			clicked = true
 			label.changeBet(2.5)
-			print(label.returnBet())
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
