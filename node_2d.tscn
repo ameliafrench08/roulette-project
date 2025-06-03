@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://LineEdit.gd" id="9_50dk6"]
 [ext_resource type="Script" path="res://Money.gd" id="10_kr2l2"]
 [ext_resource type="Script" path="res://NumberLanded.gd" id="11_2buin"]
-[ext_resource type="Texture2D" uid="uid://vkvf6q1vmnjk" path="res://Roulette-Table.png" id="14_e0uc2"]
+[ext_resource type="Texture2D" uid="uid://c6hp5s31dftad" path="res://Roulette-Table-Photoroom.png" id="12_474w8"]
 [ext_resource type="Script" path="res://Sprite2D.gd" id="15_73tc0"]
 [ext_resource type="Texture2D" uid="uid://c5nxt5yopsvkr" path="res://black arrow.png" id="16_nksk0"]
 [ext_resource type="Script" path="res://Neg Red Area.gd" id="17_d1qfj"]
@@ -44,6 +44,7 @@ unique_name_in_owner = true
 script = ExtResource("1_xmx70")
 
 [node name="RedChip" type="Sprite2D" parent="Area2D"]
+visibility_layer = 1023
 position = Vector2(838, 589)
 scale = Vector2(0.226667, 0.226667)
 texture = ExtResource("2_17sg6")
@@ -89,6 +90,7 @@ script = ExtResource("7_jcu5g")
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
+top_level = true
 offset_left = 961.0
 offset_top = 401.0
 offset_right = 1052.0
@@ -108,6 +110,7 @@ script = ExtResource("9_50dk6")
 
 [node name="Money" type="Label" parent="."]
 unique_name_in_owner = true
+top_level = true
 offset_left = 962.0
 offset_top = 288.0
 offset_right = 1060.0
@@ -126,9 +129,10 @@ script = ExtResource("11_2buin")
 
 [node name="roulette_table" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(600, 334)
-scale = Vector2(0.587037, 0.587037)
-texture = ExtResource("14_e0uc2")
+visibility_layer = 2
+position = Vector2(600, 280)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("12_474w8")
 script = ExtResource("15_73tc0")
 
 [node name="chips" type="Label" parent="."]
@@ -139,13 +143,14 @@ offset_bottom = 601.0
 text = "                 1                             5                         15"
 
 [node name="BlackArrow" type="Sprite2D" parent="."]
-position = Vector2(600, 0)
+position = Vector2(600, 15.6755)
 rotation = 1.5708
-scale = Vector2(0.258333, 0.258333)
+scale = Vector2(0.129029, 0.258)
 texture = ExtResource("16_nksk0")
 
 [node name="GreenBackground" type="Sprite2D" parent="."]
 show_behind_parent = true
+visibility_layer = 4
 position = Vector2(658, 465)
 scale = Vector2(10.6788, 9.0625)
 texture = ExtResource("17_sqejd")
