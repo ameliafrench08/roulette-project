@@ -1,13 +1,11 @@
 extends Area2D
-@onready
-var label = %Label
 
+var clicked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	clicked = false
 
 func _input(event):
-	var clicked = false
 	if event is InputEventMouseMotion:
 		var mousePosition = event.position
 		var x = mousePosition.x
@@ -22,13 +20,12 @@ func _input(event):
 		var coord_pair = event.position
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
-		if x_coord >= 796 && x_coord <= 879 && y_coord >= 546 && y_coord <= 631:
+		print(event.position)
+		if x_coord >= 99 && x_coord <= 136 && y_coord >= 492 && y_coord <= 533:
 			clicked = true
-			label.changeBet(0.5)
 
-
-	
-
+func return_clicked():
+	return clicked
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

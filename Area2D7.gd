@@ -1,6 +1,5 @@
 extends Area2D
-@onready
-var label = %Label
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,12 +21,8 @@ func _input(event):
 		var coord_pair = event.position
 		var x_coord = coord_pair.x
 		var y_coord = coord_pair.y
-		if x_coord >= 796 && x_coord <= 879 && y_coord >= 546 && y_coord <= 631:
+		if x_coord >= 796 && x_coord <= 879 && y_coord >= 546 && y_coord <= 646:
 			clicked = true
-			label.changeBet(0.5)
-
-
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
